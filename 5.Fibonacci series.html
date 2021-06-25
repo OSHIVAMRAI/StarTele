@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Print Fibonacci terms</title>
+    <style>
+        body{
+            font-size: 30px;
+            font-weight: bolder;
+            font-style: normal;
+            text-align: center;
+            margin-top: 350px;
+        }
+    </style>
+    <script>
+        let num=prompt("How many fibonacci term you want to print?")
+        let a=0;
+        let b=1;
+        let c;
+        for(let i = 1; i <= num; i++){
+            document.write(a+", ");
+            c = b + a;
+            a = b;
+            b=c;
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
