@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>var let and const</title>
+    <style>
+        body {
+            color: black;
+            font-size: 30px;
+            font-weight: bolder;
+            font-style: normal;
+            margin-top: 230px;
+            margin-left: 650px;
+        }
+    </style>
+    <Script>
+        var value = 10;
+        var count = 7;
+
+        if (count < 7) {
+            var value = 100; // here we are re initializing the var which can create a problem if we are not aware about this
+        }
+        console.log(`value=${value}`); // it will provide output: val=10
+
+
+
+        let value = 10;
+        var count = 7;
+
+        if (count < 7) {
+            let value = 100; // here we are re initializing the let which is not possible..(we can redeclare let but not reinitialize)
+        }
+        console.log(`value=${value}`); // it will provide  Uncaught SyntaxError: Identifier 'value' has already been declared
+        // so conclusion is  : let is better choice, because we don't have to worry about that we have already created variable with same name or not
+
+        //now we have to understand const: so const neither can be reinitalize nor can be redeclared
+        const value = 10;
+        var count = 7;
+
+        if (count < 7) {
+            value = 100; // here we are re declaring the const which is not possible..(we can not redeclare or reinitialize const) 
+        }
+        console.log(`value=${value}`); // it will provide Uncaught SyntaxError: Identifier 'value' has already been declared
+
+        //when we make object using const it work like this
+        const student = {
+            name: "shivam",
+            age: 22
+        }
+        //we cannot do this:
+
+        student = {
+            lastname: "rai",
+            rollno: 177
+        } 
+        // it will provide error:  Assignment to constant variable.
+        // while we can do this:
+
+        student.age = 18;
+    </Script>
+</head>
+
+<body>
+
+</body>
+
+</html>
